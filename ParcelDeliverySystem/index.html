@@ -1,0 +1,130 @@
+<html>
+<head>
+	<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body style="background:rgb(233, 231, 231)">
+
+	<div style="background:#e24439 !important" class="jumbotron text-center">
+	  <h1 style="font-family:sans-serif; color:white ">Air Jordan Delivery</h1>
+	</div>
+
+	<div class="col-md-12">
+		<div id="transfer"  class="col-md-8" style="border: 1px solid #444;padding: 20px;overflow: auto;">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="privateKey">Sender:</label>
+		      <select class="form-control" id="privateKey">
+						<option value="">Select Option</option>
+		        <option value="a64b3d7237b6d1ed167d83608e65779064a69fc4130621d2ec0b4765b109b297">Account 1</option>
+		        <option value="bb18e8074e7cccfb3c42535cef38299dbeddbc480b0679565c026b67c2e84263">Account 2</option>
+		      </select>
+				</div>
+				<div class="form-group">
+					<label for="recipient">Recipient:</label>
+		      <select class="form-control" id="recipient">
+						<option value="">Select Option</option>
+		        <option value="TCUPG2HMHG46CF5IJRK725EPVPV6DX762KXSG6X3">Account 1</option>
+		        <option value="TDKDKIFO7FKEOSKI6LOIHYYOHDCCBZLF2AX6CVKN">Account 2</option>
+		      </select>
+				</div>
+				<!-- Should I hide this -->
+				<div class="form-group">
+					<fieldset>
+						<label>Amount</label>
+						<input  class="form-control" type="text" id="amount" readOnly/>
+					</fieldset>
+				</div>
+				<div class="form-group">
+					<fieldset>
+						<label>Description</label>
+						<textarea  class="form-control" rows="5" cols="25" id="message"></textarea>
+					</fieldset>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<fieldset>
+						<label>Delivery Fee</label>
+						<p class="form-control-static" type="text">
+							<span id="fee">
+							</span> <small><b>XEM</b></small>
+						</p>
+					</fieldset>
+				</div>
+				<div class="form-group">
+					<label for="namespaceId">Delivery Method</label>
+		      <select class="form-control" id="namespaceId">
+						<option value="">Select Option</option>
+		        <option value="regular">Regular Delivery</option>
+		        <option value="express">Express Delivery</option>
+		      </select>
+				</div>
+				<div class="form-group">
+					<label for="mosaicName">Parcel Size</label>
+		      <select class="form-control" id="mosaicName">
+						<option value="">Select Option</option>
+		        <option value="medium">Medium</option>
+		        <option value="large">Large</option>
+		      </select>
+				</div>
+				<div class="form-group">
+					<fieldset>
+						<label>How many parcels?</label>
+						<input  class="form-control" type="text" id="mosaicAmount" />
+					</fieldset>
+				</div>
+				<div class="form-group">
+					<fieldset>
+						<button class="btn btn-danger" style="width:100%;" id="attachMosaic">Attach Parcel</button>
+					</fieldset>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="form-group">
+					<fieldset>
+						<button class="btn btn-danger" style="width:100%;" id="send">Send</button>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+
+		<div id="mosaicAttached" class="col-md-3" style="margin-left: 20px;border: 1px solid #444;padding: 20px;overflow: auto;">
+			<label>Parcel Attached</label>
+			<ul id="mosaicList">
+			</ul>
+		</div>
+	</div>
+
+	
+	<div id="stream" class="col-md-8" style="height: 350px;margin: auto;border: 1px solid #444;padding: 20px;overflow: auto;"></div>
+
+	<div id="account-prev" class="col-md-4" style="height: 350px;margin: auto;border: 1px solid #444;padding: 20px;overflow: auto;">
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Transactions in block <span id="txsHeight"></span></h4>
+				</div>
+				<div id="txs" class="modal-body">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../dist/nem-sdk.js"></script>
+<script src="script.js"></script>
+<script src="script2.js"></script>
+
+</html>
